@@ -22,24 +22,38 @@
 const plus = document.querySelectorAll(".plus");
 const minus = document.querySelectorAll(".minus");
 const price = document.querySelectorAll(".price");
-// console.log(price);
 const count = document.querySelectorAll(".count");
 const priceTotal = document.querySelectorAll(".priceTotal");
-[...plus].map(() => {
-  addEventListener("click", plusClick);
+[...plus].forEach((item) => {
+  item.addEventListener("click", plusClick);
 });
-// [...minus].map(
-//     (e)=>{
-//         e.addEventListener("click" , (e)=>{console.log(e.currentTarget)})
-//     }
-// );
+[...minus].forEach((item) => {
+  item.addEventListener("click", minusClick);
+});
 
+let a = 0;
 function plusClick(e) {
-  const parent = e.target.parentNode.parentNode.parentNode.parentNode;
-  const arrParent = [...parent.childNodes]
-  arrParent.get
-//   parent.map(price =>{})
-// const a = [...parent.childNodes][5]
-// const b = [...a.childNodes][1];
-// console.log();
+  let spanCount = e.currentTarget.nextSibling.nextSibling.childNodes[1];
+  spanCount.innerText = +spanCount.innerText + 1;
+  const priceMain =
+    e.currentTarget.parentElement.previousSibling.previousSibling.childNodes[3]
+      .childNodes[0].innerText;
+  const priceTotal =
+    e.currentTarget.parentElement.parentElement.nextSibling.nextSibling
+      .childNodes[1].childNodes[0];
+
+  priceTotal.innerHTML = spanCount.innerHTML * priceMain;
+}
+
+let b = a;
+function minusClick(e) {
+  const spanCount = e.currentTarget.nextSibling.nextSibling.childNodes[1];
+
+  if (spanCount.innerText > 0) {
+    spanCount.innerText = --b;
+  }
+  const price =
+    e.currentTarget.parentElement.previousSibling.previousSibling.childNodes[3]
+      .childNodes[0].innerText;
+  console.log(price);
 }
