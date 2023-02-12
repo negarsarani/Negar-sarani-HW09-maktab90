@@ -1,24 +1,4 @@
-// const plus = document.getElementById('plus');
-// const minus = document.getElementById('minus');
-// const price = document.getElementById('price');
-// const count = document.getElementById('count');
-// const priceTotal = document.getElementById('priceTotal');
-// plus.addEventListener("click", plusClick)
-// minus.addEventListener("click" , minusClick)
-
-// let saveCount = 0;
-// function plusClick(){
-//     saveCount++;
-//     count.innerHTML = saveCount;
-//     priceTotal.innerHTML = saveCount * price.innerHTML;
-// }
-// function minusClick(){
-//     if (saveCount > 0) {
-//         saveCount--;
-//         count.innerHTML = saveCount;
-//         priceTotal.innerHTML = saveCount * price.innerHTML;
-//     }
-// }
+"use strict";
 const plus = document.querySelectorAll(".plus");
 const minus = document.querySelectorAll(".minus");
 [...plus].forEach((item) => {
