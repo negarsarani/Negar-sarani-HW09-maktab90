@@ -31,7 +31,6 @@ const priceTotal = document.querySelectorAll(".priceTotal");
   item.addEventListener("click", minusClick);
 });
 
-let a = 0;
 function plusClick(e) {
   let spanCount = e.currentTarget.nextSibling.nextSibling.childNodes[1];
   spanCount.innerText = +spanCount.innerText + 1;
@@ -45,15 +44,19 @@ function plusClick(e) {
   priceTotal.innerHTML = spanCount.innerHTML * priceMain;
 }
 
-let b = a;
 function minusClick(e) {
-  const spanCount = e.currentTarget.nextSibling.nextSibling.childNodes[1];
-
+  const spanCount =
+    e.currentTarget.previousSibling.previousSibling.childNodes[1];
+  // console.log(spanCount);
   if (spanCount.innerText > 0) {
-    spanCount.innerText = --b;
+    spanCount.innerText = spanCount.innerText - 1;
   }
-  const price =
+
+  const priceMain =
     e.currentTarget.parentElement.previousSibling.previousSibling.childNodes[3]
       .childNodes[0].innerText;
-  console.log(price);
+  const priceTotal =
+    e.currentTarget.parentElement.parentElement.nextSibling.nextSibling
+      .childNodes[1].childNodes[0];
+  priceTotal.innerHTML = spanCount.innerHTML * priceMain;
 }
