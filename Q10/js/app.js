@@ -21,9 +21,6 @@
 // }
 const plus = document.querySelectorAll(".plus");
 const minus = document.querySelectorAll(".minus");
-const price = document.querySelectorAll(".price");
-const count = document.querySelectorAll(".count");
-const priceTotal = document.querySelectorAll(".priceTotal");
 [...plus].forEach((item) => {
   item.addEventListener("click", plusClick);
 });
