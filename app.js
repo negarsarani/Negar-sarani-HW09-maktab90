@@ -3,8 +3,6 @@
 const log = console.log.bind(document);
 const table = document.getElementById("age-table");
 
-
-
 // 2. All label elements inside that table (there should be 3 of them).
 const arrlabel = table.getElementsByTagName("label");
 log(arrlabel);
@@ -15,8 +13,6 @@ log(arrlabel);
 //     console.log(child);
 // })
 
-
-
 // 3. The first td in that table (with the word “Age”).
 function findfirstTd(params) {
   const tds = [...table.getElementsByTagName("td")];
@@ -24,26 +20,29 @@ function findfirstTd(params) {
 }
 log(findfirstTd());
 
-
-
 // 4. The form with name="search".
-const ElemNameIsSearch = document.getElementsByName("search");
-function formSearch(params) {
-  return ElemNameIsSearch[0];
-}
-log(formSearch());
+const elemNameIsSearch = document.getElementsByTagName("form");
+
+const findForm = [...elemNameIsSearch].find((item) => {
+  return item.name === "search";
+});
+console.log(findForm);
 
 // 5. The first input in that form.
-const form = [...document.getElementsByTagName("form")];
-form.map((elem) => {
-  const inputs = [...elem.getElementsByTagName("input")];
-  const firstInputs = inputs[0];
-  log(firstInputs);
-});
+const inputs = findForm.getElementsByTagName("input");
+log(inputs[0]);
+log(inputs[inputs.length - 1]);
+
+// const form = [...document.getElementsByTagName("form")];
+// form.map((elem) => {
+//   const inputs = [...elem.getElementsByTagName("input")];
+//   const firstInputs = inputs[0];
+//   log(firstInputs);
+// });
 
 // 6. The last input in that form.
-form.map((elem) => {
-  const inputs = [...elem.getElementsByTagName("input")];
-  const LasttInputs = inputs[inputs.length - 1];
-  log(LasttInputs);
-});
+// form.map((elem) => {
+//   const inputs = [...elem.getElementsByTagName("input")];
+//   const LasttInputs = inputs[inputs.length - 1];
+//   log(LasttInputs);
+// });
