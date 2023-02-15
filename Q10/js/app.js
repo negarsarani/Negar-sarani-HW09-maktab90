@@ -7,6 +7,7 @@ const saleInput = document.getElementById("saleCode");
 const btnTick = document.getElementById("btn-tick");
 const mainPrice = document.getElementById("main-price");
 const percent = document.getElementById("percent");
+const btnfinal = document.getElementById("btn-final");
 
 [...plus].forEach((item) => {
   item.addEventListener("click", plusClick);
@@ -84,3 +85,12 @@ function name() {
 function main(a, b) {
   return (mainPrice.innerText = Number(a) + Number(b));
 }
+
+// btnfinal.addEventListener("click", btnfinalFunc);
+// function btnfinalFunc(params) {
+// //   const createmodal = `
+// //  `;
+//   const divMadal = document.createElement("div");
+//   document.body.appendChild(divMadal);
+//   divMadal.innerHTML = 
+// }
