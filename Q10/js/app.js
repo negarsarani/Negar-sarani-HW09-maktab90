@@ -50,8 +50,9 @@ function minusClick(e) {
 function totalPrice() {
   const card = document.getElementById("card");
   const eachPrice = card.querySelectorAll(".totalPrice");
-  const reducePrices = [...eachPrice].reduce((a, b) => {
-    return +a.innerHTML + +b.innerHTML;
+  const arrayPrices = [...eachPrice].map((item) => +item.innerText);
+  const reducePrices = arrayPrices.reduce((a, b) => {
+    return a + b;
   });
   sumAllOrder.innerText = reducePrices;
   servicePayment(sumAllOrder.innerText);
