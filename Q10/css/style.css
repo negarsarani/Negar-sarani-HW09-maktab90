@@ -1,0 +1,18 @@
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #9f9f9f;
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
+
+.card{
+  height: 30rem;
+}
+.img-food{
+  width: 10rem;
+  height: 1rem;
+}
